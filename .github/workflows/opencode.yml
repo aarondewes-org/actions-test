@@ -11,6 +11,11 @@ on:
     types: [submitted]
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print JSON
+        run: echo ${{ toJSON (github.event) }}
   opencode:
     if: |
       contains(fromJson('["OWNER","MEMBER"]'), github.event.comment.author_association || github.event.issue.author_association || github.event.review.author_association) &&
