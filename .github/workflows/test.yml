@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  push:
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mkdir
+        run: mkdir test && cd test
+
+      - name: Mkdir
+        run: pwd
+
